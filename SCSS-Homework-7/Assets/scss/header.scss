@@ -1,0 +1,129 @@
+@import './variables.scss';
+
+header{
+    background: #2F2F2F;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    nav{
+        padding: 30px 0;
+        padding-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        .image{
+            width: 95px;
+            height: 56px;
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            gap: 90px;
+            ul{
+                display: flex;
+                gap: 40px;
+                a{
+                    color: #FFFFFF;
+                    font-weight: 500;
+                    opacity: 0.6;
+                    transition: 0.3s ease-out;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        menu{
+            display: none;
+            input{
+                display: none;
+                &:checked ~ label{
+                    &:nth-of-type(1){
+                        display: none;
+                    }
+                    &:nth-of-type(2){
+                        display: block;
+                    }
+                }
+                &:checked ~ .menu-left{
+                    left: 0;
+                    box-shadow: 0 800px 0 800px #F59B0030;
+                }
+            }
+            label{
+                font-size: 28px;
+                color: white;
+                &:nth-of-type(2){
+                    display: none;
+                }
+            }
+        }
+        .menu-left{
+            position: fixed;
+            left: -330px;
+            top: 100px;
+            width: 330px;
+            height: calc(100% - 100px);
+            background-color: $primary;
+            padding: 40px 30px;
+            padding-left: 7%;
+            transition: 0.3s ease-out;
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            a{
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: 1.8em;
+                opacity: 0.7;
+                transition: 0.3s ease-out;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @media(max-width:940px){
+        nav{
+            .links{
+                gap: 60px;
+                ul{
+                    gap: 30px;
+                }
+            }
+        }
+    }
+    @media(max-width:840px){
+        nav{
+            .links{
+                gap: 50px;
+                ul{
+                    gap: 25px;
+                }
+            }
+        }
+    }
+    @media(max-width:756px){
+        nav{
+            menu{
+                display: flex;
+            }
+            .links{
+                display: none;
+            }
+        }
+    }
+    @media(max-width:500px){
+        nav{
+            menu{
+                .menu-left{
+                    width: 100%;
+                    left: -500px;
+                }
+            }
+        }
+    }
+}

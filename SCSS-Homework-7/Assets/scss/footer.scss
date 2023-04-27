@@ -1,0 +1,97 @@
+@import './variables.scss';
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 97px;
+    background-image: linear-gradient(to bottom, rgba(47, 47, 47, 0.92), rgba(47, 47, 47, 0.92)), url(../images/bg3.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    a{
+        font-weight: 400;
+        font-size: 1em;
+        color: #FFFFFF;
+        opacity: 0.7;
+        text-transform: capitalize;
+        transition: 0.3s ease-out;
+        &:hover{
+            color: #F59B00;
+            opacity: 1;
+        }
+    }
+    .logo{
+        width: 224px;
+        .image{
+            width: 95px;
+            height: 56px;
+        }
+        p{
+            color: #FFFFFF;
+            opacity: 0.7;
+        }
+    }
+    h3{
+        font-weight: 500;
+        font-size: 1.2em;
+        color: white;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        input{
+            border: 1px solid #FFFFFF25;
+            border-radius: 10px;
+            padding: 18px 30px;
+            outline: none;
+            background-color: #2F2F2F00;
+            font-weight: 400;
+            font-size: 1em;
+            line-height: 120%;
+            text-transform: capitalize;
+            color: #FFFFFF35;
+            margin-bottom: 30px;
+        }
+    }
+    @media(max-width:1160px){
+        flex-wrap: wrap;
+        gap: 50px;
+        form{
+            order: 2;
+            width: 42%;
+            input{
+                width: 264px;
+            }
+        }
+        .logo{
+            order: 1;
+        }
+        ul{
+            order: 3;
+            width: 42%;
+        }
+    }
+    @media(max-width:579px){
+        form{
+            order: 4;
+            width: 45%;
+            input{
+                width: 264px;
+            }
+        }
+        .logo{
+            order: 1;
+        }
+        ul{
+            order: 3;
+            width: 45%;
+        }
+    }
+}
